@@ -1,0 +1,39 @@
+DEFAULT_CONFIG_YAML = """# Sleepy 配置文件
+# 修改后重启生效
+
+main:
+  # 监听地址（0.0.0.0 允许外部访问）
+  host: "127.0.0.1"
+  port: 8080
+  # 密钥：用于 /api/status/set 等敏感操作
+  # change-me-in-production!
+  secret: "cmip!"
+  debug: false
+  https: false
+  # ssl_key: "/path/to/key.pem"
+  # ssl_cert: "/path/to/cert.pem"
+  cors_origins: "*"
+
+page:
+  title: "Sleepy"
+  theme: "default"
+
+status:
+  default: 0
+  status_list:
+    - id: 0
+      name: "空闲中"
+      color: "#4CAF50"
+      icon: "💤"
+      description: "可以打扰"
+    - id: 1
+      name: "工作中"
+      color: "#F44336"
+      icon: "🚫"
+      description: "请勿打扰"
+    - id: 2
+      name: "睡觉中"
+      color: "#2196F3"
+      icon: "🌙"
+      description: "深夜勿扰"
+"""
